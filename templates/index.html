@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="{% url 'index' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="query" id="">
+        <input type="submit" value="Get Sentiment">
+    </form>
+
+    <h3 style="color:white;">Sentiment  :- {{polarity}}</h3>
+        <h3 style="color:white;">Subjective :- {{subjectivity}}</h3>
+
+    <div class="gauge">
+        <ul class="meter">
+            <li class="low"></li>
+            <li class="normal"></li>
+            <li class="high"></li>
+        </ul>
+
+        <div class="dial">
+                <div class="inner">
+                    <div class="arrow">
+                    </div>
+                </div>			
+        </div>
+
+        <div class="value">
+            0%
+        </div>
+
+    </div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
+
+<script type="text/javascript">
+    
+var dial = $(".dial .inner");
+	var gauge_value = $(".gauge .value");
+
+		function rotateDial()
+		{
+			var deg = 0;
+			var value = {{polarity}};
+			deg = (value * 177.5) / 100;
+
+			gauge_value.html(value + "%");
+
+			dial.css({'transform': 'rotate('+deg+'deg)'});
+		    dial.css({'-ms-transform': 'rotate('+deg+'deg)'});
+		    dial.css({'-moz-transform': 'rotate('+deg+'deg)'});
+		    dial.css({'-o-transform': 'rotate('+deg+'deg)'}); 
+		    dial.css({'-webkit-transform': 'rotate('+deg+'deg)'});
+		}
+
+		setInterval(rotateDial, 2000);
+
+</script>
+
+</body>
+</html>
