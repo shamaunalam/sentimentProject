@@ -9,4 +9,4 @@ def get_sentiment(query):
     s = data.sentiment
 
 
-    return {"polarity":(s[0]+1)/2,"subjectivity":s[1]}
+    return {"polarity":(s[0]+1)/2,"subjectivity":round(s[1],2)}
