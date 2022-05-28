@@ -2,23 +2,7 @@ body{
   background-color: #8F00FF;
   font-family: 'Trebuchet MS', sans-serif;
 }
-.menu{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-.menu h3{
-  color: white;
-  font-weight: 400;
-  border: 1px solid white;
-  border-radius: 3px;
-  padding: 5px;
-}
-.menu h3:hover{
-  cursor: pointer;
-  background-color: white;
-  color: #8F00FF;
-}
+
 .main-body{
   background: linear-gradient(#800000, black); 
   background-repeat: no-repeat;
