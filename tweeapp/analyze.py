@@ -8,5 +8,9 @@ def get_sentiment(query):
 
     s = data.sentiment
 
+    if s[1]<=0.5:
+        sub = "Fact"
+    elif s[1]>0.5:
+        sub = "Opinion"
 
-    return {"polarity":(s[0]+1)/2,"subjectivity":round(s[1],2)}
+    return {"polarity":(s[0]+1)/2,"subjectivity":sub}
