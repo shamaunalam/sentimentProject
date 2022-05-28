@@ -6,8 +6,12 @@ body{
   background-repeat: no-repeat;
   padding: 25px;
   height: 500px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
 }
-.main-input{height: 100%}
+
 .main-input form{
   display: flex;
   flex-direction: column;
