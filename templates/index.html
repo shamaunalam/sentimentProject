@@ -10,22 +10,37 @@
       rel="stylesheet"
       type="text/css"
     />
+    <script
+      src="https://kit.fontawesome.com/yourcode.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="{% static 'index.css' %}" />
     <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
     <title>Document</title>
   </head>
   <body>
+    <section class="menu">
+      <h3>HOME</h3>
+      <h3>Analyse text</h3>
+      <h3>Analyse Tweet</h3>
+    </section>
     <section class="main-body">
       <div id="myChart"></div>
       <div class="main-input">
         <form action="{% url 'index' %}" method="post">
           {% csrf_token %}
-          <input class="text" type="text" name="query" id="" />
-          <input class="btn" type="submit" value="Get Sentiment" />
+          <input
+            class="text"
+            type="text"
+            name="query"
+            placeholder="Enter your text here"
+            id=""
+          />
+          <input class="btn" type="submit" value="Analyse" />
         </form>
 
-        <h3>Sentiment : {{polarity}}</h3>
-        <h3>Fact or Opinion : {{subjectivity}}</h3>
+        <h3>Sentiment : <span>{{polarity}}</span></h3>
+        <h3>Fact or Opinion : <span>{{subjectivity}}</span></h3>
       </div>
 
       <script>
