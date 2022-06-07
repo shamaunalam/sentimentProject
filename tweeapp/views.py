@@ -17,7 +17,7 @@ def index(request):
         return render(request,'index.html')
 
 
-def get_tweets(requests,query):
+def get_tweets(request,query):
 
     tweet_fields = "tweet.fields=text"
     
@@ -26,6 +26,7 @@ def get_tweets(requests,query):
 
     content = dict()
     for i,t in enumerate(json_response['data']):
-        content.update({f'tweet_{i}':t['text'],f'sent_{i}':analyze.get_sentiment(t['text'])})
+        content.update({i:{'tweet':t['text'],'sent':analyze.get_sentiment(t['text'])}})
 
-    return JsonResponse(content)
+    
+    return render(request,'tweet.html',{'content':content})
