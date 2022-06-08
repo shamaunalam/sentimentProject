@@ -22,6 +22,13 @@
     <section class="main-body">
       <div id="myChart"></div>
       <div class="main-input">
+        <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+        <lord-icon
+          src="https://cdn.lordicon.com/fcoczpqi.json"
+          trigger="loop"
+          style="width: 250px; height: 250px"
+        >
+        </lord-icon>
         <form action="{% url 'index' %}" method="post">
           {% csrf_token %}
           <input
@@ -45,13 +52,9 @@
           />
           <input class="btn" type="submit" value="search" />
         </form>
-
-
-
-
-        <h3>Sentiment : <span>{{polarity}}</span></h3>
-        <h3>Fact or Opinion : <span>{{subjectivity}}</span></h3>
       </div>
+      <h3>Sentiment : <span>{{polarity}}</span></h3>
+      <h3>Fact or Opinion : <span>{{subjectivity}}</span></h3>
 
       <script>
         var myConfig8 = {

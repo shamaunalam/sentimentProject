@@ -1,26 +1,27 @@
 body{
-  background-color: #8F00FF;
   font-family: 'Trebuchet MS', sans-serif;
 }
 
 .main-body{
-  background: linear-gradient(#800000, black); 
+  background: linear-gradient(#2DB1FF, black); 
   background-repeat: no-repeat;
   padding: 25px;
   height: 500px;
-  display: flex;
-  flex-direction: row-reverse;
   align-items: center;
   justify-content: space-around;
   border: 1px solid transparent;
   border-radius: 25px;
 }
-
+.main-input{
+  display: flex;
+  flex-direction: row;
+  gap: 35px;
+  align-items: center;
+}
 .main-input form{
   display: flex;
   flex-direction: column;
   gap: 10px;
-  align-items: center;
 }
 .main-body .main-input form .text{
       width: 400px;
@@ -29,16 +30,16 @@ body{
       border-radius: 3px;
 }
 .main-body .main-input form .btn{
-      border: 1px solid #8F00FF;
+      border: 1px solid #2DB1FF;
       background-color:white;
-      color: #8F00FF;
+      color: #2DB1FF;
       font-weight: 600;
       font-size: 18px;
       padding: 5px 12px;
       border-radius: 3px;
 }
 .main-body .main-input form .btn:hover{
-  background-color: #8F00FF ;
+  background-color: #2DB1FF ;
   cursor: pointer;
   color: white;
 }
