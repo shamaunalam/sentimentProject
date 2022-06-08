@@ -34,6 +34,21 @@
           <input class="btn" type="submit" value="Analyse" />
         </form>
 
+        <form action="{% url 'tweets' %}" method="post">
+          {% csrf_token %}
+          <input
+            class="text"
+            type="text"
+            name="query"
+            placeholder="Search Recent Tweets"
+            id=""
+          />
+          <input class="btn" type="submit" value="search" />
+        </form>
+
+
+
+
         <h3>Sentiment : <span>{{polarity}}</span></h3>
         <h3>Fact or Opinion : <span>{{subjectivity}}</span></h3>
       </div>
