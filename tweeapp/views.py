@@ -23,13 +23,19 @@ def get_tweets(request):
         tweet_fields = "tweet.fields=text"
         query = request.POST['query']
         #twitter api call
-        json_response = search_twitter(query=query, tweet_fields=tweet_fields, bearer_token=BEARER_TOKEN)
-
         content = dict()
-        for i,t in enumerate(json_response['data']):
-            content.update({i:{'tweet':t['text'],'sent':analyze.get_sentiment(t['text'])}})
+        if not len(query)==0:
+            json_response = search_twitter(query=query, tweet_fields=tweet_fields, bearer_token=BEARER_TOKEN)
 
-        
+            
+
+            if json_response['meta']['result_count']>0:
+                for i,t in enumerate(json_response['data']):
+                    content.update({i:{'tweet':t['text'],'sent':analyze.get_absolute_sentiment(t['text'])}})
+            else:
+                content.update({1:"No Tweet Found"})
+        else:
+            content.update({1:"No Query Entered"})
         return render(request,'tweet.html',{'content':content})
     else:
         return redirect('index')

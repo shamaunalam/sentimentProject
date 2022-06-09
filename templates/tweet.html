@@ -8,8 +8,13 @@
     <title>Document</title>
   </head>
   <body>
+    <table>
     {% for key,value in content.items %}
-    <p>{{value}}</p>
+    <tr>
+    <td>{{value.tweet}}</td>
+    <td>{{value.sent.polarity}}</td>
+    </tr>
     {% endfor %}
+  </table>
   </body>
 </html>
