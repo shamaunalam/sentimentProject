@@ -16,12 +16,15 @@ body{
   display: flex;
   flex-direction: row;
   gap: 35px;
-  align-items: center;
+  align-items: flex-start;
 }
 .main-input form{
   display: flex;
   flex-direction: column;
   gap: 10px;
+  border: 3px solid white;
+  border-radius: 5px;
+  padding: 10px;
 }
 .main-body .main-input form .text{
       width: 400px;
@@ -29,12 +32,19 @@ body{
       border: 1px solid transparent;
       border-radius: 3px;
 }
+.main-body .main-input form h2{
+  color: white;
+  font-weight: 600;
+  font-family: cursive;
+  margin-bottom: 10px;
+}
 .main-body .main-input form .btn{
       border: 1px solid #2DB1FF;
       background-color:white;
       color: #2DB1FF;
       font-weight: 600;
       font-size: 18px;
+      font-family: cursive;
       padding: 5px 12px;
       border-radius: 3px;
 }
