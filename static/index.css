@@ -76,3 +76,36 @@ body{
   color: white;
   margin-left: 2%;
 }
+/* CSS for Tweet page------------------------ */
+
+.tweet-body{
+  font-family: 'Trebuchet MS', sans-serif;
+  height: 100%;
+  background-color: #2DB1FF;
+  color: white;
+
+}
+.tweet-body table{
+  width: 100%;
+}
+.tweet-body table tbody{
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.tweet-body table tbody tr{
+  display: flex;
+  margin-inline:auto;
+  width: 80%;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid white;
+  border-radius: 3px;
+  padding: 5px;
+}
+.tweet-body table tbody tr td:first-child{
+  width: 70%;
+}
+.tweet-body table tbody tr td:last-child{
+ width: 10%;
+}
