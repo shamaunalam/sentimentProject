@@ -20,8 +20,6 @@ def get_absolute_sentiment(query):
     sent_val = get_sentiment(query)
 
     sentiment = ''
-
-
     if 0<sent_val['polarity']<0.5:
 
         sentiment = "Bad"
